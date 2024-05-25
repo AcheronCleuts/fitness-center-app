@@ -11,8 +11,9 @@ app.set("view engine", "ejs");
 app.use(cors());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static("public"));
 
-app.use(router)
+app.use(router);
 
 app.use("/", (req, res) => {
   res.render("index");
