@@ -11,6 +11,10 @@ router.use("/planlar", (req, res)=>{
     res.render("plans");
 })
 
+router.use("/profile", (req, res)=>{
+    res.render("profile");
+})
+
 router.use("/giris", (req, res)=>{
     res.render("login");
 })
@@ -22,4 +26,5 @@ router.use("/kayit", (req, res)=>{
 router.use("/", (req, res) => {
     res.render("index");
 });
+
 module.exports = router;
