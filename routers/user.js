@@ -5,11 +5,11 @@ const authenticationMid = require('../middleware/auth');
 
 const router = express.Router();
 
-router.get("/kayitgiris", (req, res)=>{
+router.get("/kayitgiris",authenticationMid, (req, res)=>{
     res.render("succeslogin");
 });
 
-router.get("/profil/:id", async (req, res)=>{
+router.get("/profil/:id",authenticationMid, async (req, res)=>{
     var userID = req.cookies.token;
     const userLog = await User.findOne({where: {id: userID}});
     res.render("profile", {
@@ -20,23 +20,23 @@ router.get("/profil/:id", async (req, res)=>{
     })
 })
 
-router.use("/planlar", (req, res)=>{
+router.use("/planlar",authenticationMid, (req, res)=>{
     res.render("plans");
 })
 
-router.use("/profile", (req, res)=>{
+router.use("/profile",authenticationMid, (req, res)=>{
     res.render("profile");
 })
 
-router.use("/giris", (req, res)=>{
+router.use("/giris",authenticationMid, (req, res)=>{
     res.render("login");
 })
 
-router.use("/kayit", (req, res)=>{
+router.use("/kayit",authenticationMid, (req, res)=>{
     res.render("register");
 })
 
-router.use("/", (req, res) => {
+router.use("/",authenticationMid, (req, res) => {
     res.render("index");
 });
 

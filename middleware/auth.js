@@ -1,21 +1,25 @@
 const User = require("../models/user");
 
 const authenticationMid = async (req, res, next) => {
-  const tokens = req.headers.cookie;
-  if (!tokens) {
-    return res.status(401).json({ message: "Erişim için lütfen giriş yapınız!!!" });
+  const userID = req.cookies.token;
+  if (userID) {
+    const userLog = await User.findOne({ where: { id: userID } });
+    if (userLog) {
+      res.locals.isAuth = req.cookies.isAuth;
+      res.locals.user = {
+        id: userLog.id,
+        name: userLog.name,
+        email: userLog.email,
+      };
+    } else {
+      res.locals.isAuth = 0;
+      res.locals.user = null;
+    }
+  } else {
+    res.locals.isAuth = 0;
+    res.locals.user = null;
   }
-  try {
-    console.log(tokens + "31");
-    const token = tokens.split("=")[1];
-    const userLog = await User.findOne({ where: { id: token } });
-    console.log(userLog.name);
-
-    next();
-  } catch (error) {
-    console.log(error);
-    return res.status(500).json({ message: "Token doğrulama hatası: " + error.message });
-  }
+  next();
 };
 
 module.exports = authenticationMid;
