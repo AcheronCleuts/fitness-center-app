@@ -20,6 +20,11 @@ const User = sequelize.define("Users", {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  membership: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    defaultValue: 0,
+  },
 });
 
 module.exports = User;

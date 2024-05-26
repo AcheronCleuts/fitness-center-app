@@ -1,5 +1,6 @@
 const express = require('express');
 const {register, login, logout} = require('../controllers/user');
+const authenticationMid = require('../middleware/auth');
 
 const router = express.Router();
 
@@ -23,7 +24,7 @@ router.use("/kayit", (req, res)=>{
     res.render("register");
 })
 
-router.use("/", (req, res) => {
+router.use("/",authenticationMid,(req, res) => {
     res.render("index");
 });
 

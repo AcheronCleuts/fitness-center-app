@@ -1,5 +1,4 @@
 const User = require("../models/user");
-const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
 const register = async (req, res) => {
@@ -36,10 +35,13 @@ const login = async (req, res) => {
       return res.status(400).send("Şifreniz yanlış tekrar deneyiniz");
     }
 
-    const token = jwt.sign({ userId: user.id }, process.env.SECRET_KEY, { expiresIn: "1h" });
     res
       .status(200)
-      .cookie("token", token, { expires: new Date(Date.now() + 15 * 60 * 1000) })
+      .cookie("token", user.id, {
+        expires: new Date(Date.now() + 3600000),
+        httpOnly: true,
+        secure: true,
+      })
       .send("Giriş Başarılı");
   } catch (error) {
     console.error(error);
