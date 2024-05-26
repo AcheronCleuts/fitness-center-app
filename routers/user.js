@@ -14,14 +14,12 @@ router.get("/kayitgiris", (req, res)=>{
 });
 
 router.get("/profil/:id", async (req, res)=>{
-    var userID = req.headers.cookie.split("=")[1];;
+    var userID = req.cookies.token;
     const userLog = await User.findOne({where: {id: userID}});
-    console.log(userLog.name);
-    // res.render("profile", {
-    //     name: userLog.name,
-    //     email: userLog.email,
-    // })
-    // console.log(userLog.name);
+    res.render("profile", {
+        name: userLog.name,
+        email: userLog.email,
+    })
 })
 
 router.use("/planlar", (req, res)=>{

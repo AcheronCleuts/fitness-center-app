@@ -43,6 +43,11 @@ const login = async (req, res) => {
         httpOnly: true,
         secure: true,
       })
+      .cookie("isAuth", "1", {
+        expires: new Date(Date.now() + 3600000),
+        httpOnly: true,
+        secure: true,
+      })
       .redirect(`/profil/${user.id}`);
   } catch (error) {
     console.error(error);
