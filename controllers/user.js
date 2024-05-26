@@ -15,7 +15,8 @@ const register = async (req, res) => {
       email,
       password,
     });
-    res.status(201).send("Kayıt işlemi başarıyla gerçekleştirilmiştir");
+    res.redirect("/kayitgiris");
+    // res.status(201).send("Kayıt işlemi başarıyla gerçekleştirilmiştir").redirect("/giris");
   } catch (error) {
     console.error(error);
     res.status(500).send("Kayıt işlemi sırasında beklenmedik bir hata oluştu");
@@ -42,7 +43,7 @@ const login = async (req, res) => {
         httpOnly: true,
         secure: true,
       })
-      .send("Giriş Başarılı");
+      .redirect(`/profil/${user.id}`);
   } catch (error) {
     console.error(error);
     res.status(500).send("Giriş başarısız");
