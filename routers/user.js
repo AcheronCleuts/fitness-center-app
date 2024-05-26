@@ -19,6 +19,7 @@ router.get("/profil/:id", async (req, res)=>{
     res.render("profile", {
         name: userLog.name,
         email: userLog.email,
+        isAuth: req.cookies.isAuth
     })
 })
 

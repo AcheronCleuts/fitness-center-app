@@ -56,7 +56,8 @@ const login = async (req, res) => {
 };
 
 const logout = async (req, res) => {
-  res.clearCookie("token").send("Cookieler silindi");
+  res.clearCookie();
+  res.redirect("/");
 };
 
 module.exports = { register, login, logout };
