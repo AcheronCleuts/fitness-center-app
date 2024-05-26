@@ -5,10 +5,6 @@ const authenticationMid = require('../middleware/auth');
 
 const router = express.Router();
 
-router.post('/register', register);
-router.post('/login', login);
-router.get('/logout', logout);
-
 router.get("/kayitgiris", (req, res)=>{
     res.render("succeslogin");
 });
@@ -19,6 +15,7 @@ router.get("/profil/:id", async (req, res)=>{
     res.render("profile", {
         name: userLog.name,
         email: userLog.email,
+        date: userLog.createdAt,
         isAuth: req.cookies.isAuth
     })
 })

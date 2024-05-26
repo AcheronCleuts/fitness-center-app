@@ -1,7 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const router = require("./routers/user");
+const user = require("./routers/user");
+const auth = require("./routers/auth");
 const sequelize = require("./config/db");
 const cookieParser = require("cookie-parser");
 require("dotenv").config();
@@ -13,7 +14,8 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("public"));
 
-app.use(router);
+app.use(auth);
+app.use(user);
 
 app.use("/", (req, res) => {
   res.render("index");

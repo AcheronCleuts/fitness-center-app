@@ -36,9 +36,8 @@ const login = async (req, res) => {
       return res.status(400).send("Şifreniz yanlış tekrar deneyiniz");
     }
 
-    res
-      .status(200)
-      .cookie("token", user.id, {
+    res.status(200)
+       .cookie("token", user.id, {
         expires: new Date(Date.now() + 3600000),
         httpOnly: true,
         secure: true,
