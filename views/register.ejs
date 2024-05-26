@@ -1,0 +1,35 @@
+<%- include('layouts/header') %>
+    <div class="mx-auto max-w-[450px] space-y-6 py-12 px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h1 class="text-3xl font-bold">Bize Katıl!</h1>
+            <p class="mt-2 text-gray-500 dark:text-gray-400">
+                Üyelik için kaydolun ve fitness yolculuğunuza bugün başlayın.
+            </p>
+        </div>
+        <form class="space-y-4" action="/register" method="post">
+            <div><label
+                    class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    for="name">İsim</label><input
+                    class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    id="name" name="name" placeholder="İsminizi girin" required="" /></div>
+            <div><label
+                    class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    for="email">Email</label><input
+                    class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    type="email" id="email" name="email" placeholder="Email girin" required="" /></div>
+            <div><label
+                    class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    for="password">Şifre</label><input
+                    class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    type="password" id="password" name="password" placeholder="Şifrenizi girin" required="" /></div><button
+                class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full"
+                type="submit">
+                Kayıt Ol
+            </button>
+        </form>
+        <div class="text-center text-sm text-gray-500 dark:text-gray-400">
+            Hesabınız var mı?<!-- --> <a class="font-medium text-gray-900 dark:text-gray-50 hover:underline" href="#">
+                Giriş yap
+            </a></div>
+    </div>
+    <%- include('layouts/footer') %>
