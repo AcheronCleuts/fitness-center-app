@@ -502,11 +502,12 @@
         <nav class="hidden md:flex space-x-6 text-xl">
           <a class="hover:text-red-500" href="/"> Anasayfa </a>
           <a class="hover:text-red-500" href="/planlar"> Paketler</a>
+          <a class="hover:text-red-500" href="#"> Rezervasyon</a>
         </nav>
       </div>
       <div class="flex items-center justify-center space-x-4">
         <% if (typeof(isAuth) != "undefined" && isAuth == "1") { %>
-          <a class="bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-md cursor-pointer"> <%= user.name %> </a>
+          <a class="bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-md cursor-pointer" href="<%= user.profile %>"><%= user.name %></a>
           <a class="bg-red-600 hover:bg-red-500 text-white px-4 py-2 rounded-md" href="/logout"> Çıkış </a>
         <% }else {%>
         <a class="bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-md" href="/giris"> Giriş </a>

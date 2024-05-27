@@ -9,16 +9,9 @@ router.get("/kayitgiris",authenticationMid, (req, res)=>{
     res.render("succeslogin");
 });
 
-router.get("/profil/:id",authenticationMid, async (req, res)=>{
-    var userID = req.cookies.token;
-    const userLog = await User.findOne({where: {id: userID}});
-    res.render("profile", {
-        name: userLog.name,
-        email: userLog.email,
-        date: userLog.createdAt,
-        isAuth: req.cookies.isAuth
-    })
-})
+// router.get("/profil/:id",authenticationMid, (req, res)=>{
+//     res.render("profile")
+// })
 
 router.use("/planlar",authenticationMid, (req, res)=>{
     res.render("plans");
@@ -34,6 +27,10 @@ router.use("/giris",authenticationMid, (req, res)=>{
 
 router.use("/kayit",authenticationMid, (req, res)=>{
     res.render("register");
+})
+
+router.use("/test", (req, res)=>{
+    res.render("rezervasyon");
 })
 
 router.use("/",authenticationMid, (req, res) => {

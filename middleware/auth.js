@@ -10,6 +10,9 @@ const authenticationMid = async (req, res, next) => {
         id: userLog.id,
         name: userLog.name,
         email: userLog.email,
+        date: userLog.createdAt,
+        membership: userLog.membership,
+        profile: `/profile/${userLog.id}`
       };
     } else {
       res.locals.isAuth = 0;
