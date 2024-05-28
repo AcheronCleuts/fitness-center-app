@@ -1,3 +1,180 @@
 <%- include('layouts/header') %>
 
+<main class="container mx-auto px-4 md:px-6 py-12">
+  <section class="grid md:grid-cols-3 gap-8">
+    <!-- Card 1 -->
+    <div class="bg-white dark:bg-gray-950 rounded-lg shadow-lg overflow-hidden">
+      <img src="/placeholder.svg" alt="Swimming" class="w-full h-48 object-cover" />
+      <div class="p-6">
+        <h3 class="text-2xl font-bold mb-2">Swimming &amp; Fitness</h3>
+        <p class="text-gray-500 dark:text-gray-400 mb-4">Explore our state-of-the-art facilities and join our expert-led classes.</p>
+        <a class="inline-flex items-center gap-2 text-red-500 hover:text-red-600 dark:text-red-400 dark:hover:text-red-500" href="#">
+          View Classes
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <!-- Card 2 -->
+    <div class="bg-white dark:bg-gray-950 rounded-lg shadow-lg overflow-hidden">
+      <img src="/placeholder.svg" alt="Sports" class="w-full h-48 object-cover" />
+      <div class="p-6">
+        <h3 class="text-2xl font-bold mb-2">Football, Basketball &amp; Volleyball</h3>
+        <p class="text-gray-500 dark:text-gray-400 mb-4">Join our competitive leagues and tournaments for all skill levels.</p>
+        <a class="inline-flex items-center gap-2 text-red-500 hover:text-red-600 dark:text-red-400 dark:hover:text-red-500" href="#">
+          View Leagues
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <!-- Card 3 -->
+    <div class="bg-white dark:bg-gray-950 rounded-lg shadow-lg overflow-hidden">
+      <img src="/placeholder.svg" alt="Yoga" class="w-full h-48 object-cover" />
+      <div class="p-6">
+        <h3 class="text-2xl font-bold mb-2">Yoga &amp; Pilates</h3>
+        <p class="text-gray-500 dark:text-gray-400 mb-4">Unwind and rejuvenate with our expert-led yoga and Pilates classes.</p>
+        <a class="inline-flex items-center gap-2 text-red-500 hover:text-red-600 dark:text-red-400 dark:hover:text-red-500" href="#">
+          View Classes
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <section class="mt-12">
+    <div class="bg-white dark:bg-gray-950 rounded-lg shadow-lg p-6">
+      <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Sport Selection -->
+        <div class="relative">
+          <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="sport">Select Sport</label>
+          <button
+            type="button"
+            role="combobox"
+            aria-controls="sport-dropdown"
+            aria-expanded="false"
+            aria-autocomplete="none"
+            dir="ltr"
+            data-state="closed"
+            id="sport-button"
+            class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+            onclick="toggleDropdown('sport-dropdown', 'sport-button')"
+          >
+            <span id="selected-sport" style="pointer-events: none">Choose a sport</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 opacity-50" aria-hidden="true">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </button>
+          <div id="sport-dropdown" class="absolute mt-1 w-full bg-white dark:bg-gray-950 rounded-md shadow-lg hidden z-10">
+            <ul role="listbox" class="py-1" tabindex="-1">
+              <li role="option" class="px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-800 cursor-pointer" onclick="selectItem('selected-sport', 'sport-dropdown', 'sport-button', 'Football')">Football</li>
+              <li role="option" class="px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-800 cursor-pointer" onclick="selectItem('selected-sport', 'sport-dropdown', 'sport-button', 'Basketball')">Basketball</li>
+              <li role="option" class="px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-800 cursor-pointer" onclick="selectItem('selected-sport', 'sport-dropdown', 'sport-button', 'Volleyball')">Volleyball</li>
+              <li role="option" class="px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-800 cursor-pointer" onclick="selectItem('selected-sport', 'sport-dropdown', 'sport-button', 'Swimming')">Swimming</li>
+              <li role="option" class="px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-800 cursor-pointer" onclick="selectItem('selected-sport', 'sport-dropdown', 'sport-button', 'Yoga')">Yoga</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Date Selection -->
+        <!-- Sport Selection -->
+        <div class="relative">
+          <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="sport">Select Sport</label>
+          <button
+            type="button"
+            role="combobox"
+            aria-controls="sport-dropdown"
+            aria-expanded="false"
+            aria-autocomplete="none"
+            dir="ltr"
+            data-state="closed"
+            id="sport-button"
+            class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+            onclick="toggleDropdown('sport-dropdown', 'sport-button')"
+          >
+            <span id="selected-sport" style="pointer-events: none">Choose a sport</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 opacity-50" aria-hidden="true">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </button>
+          <div id="sport-dropdown" class="absolute mt-1 w-full bg-white dark:bg-gray-950 rounded-md shadow-lg hidden z-10">
+            <ul role="listbox" class="py-1" tabindex="-1">
+              <li role="option" class="px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-800 cursor-pointer" onclick="selectItem('selected-sport', 'sport-dropdown', 'sport-button', 'Football')">Football</li>
+              <li role="option" class="px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-800 cursor-pointer" onclick="selectItem('selected-sport', 'sport-dropdown', 'sport-button', 'Basketball')">Basketball</li>
+              <li role="option" class="px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-800 cursor-pointer" onclick="selectItem('selected-sport', 'sport-dropdown', 'sport-button', 'Volleyball')">Volleyball</li>
+              <li role="option" class="px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-800 cursor-pointer" onclick="selectItem('selected-sport', 'sport-dropdown', 'sport-button', 'Swimming')">Swimming</li>
+              <li role="option" class="px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-800 cursor-pointer" onclick="selectItem('selected-sport', 'sport-dropdown', 'sport-button', 'Yoga')">Yoga</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Date Selection -->
+        <div class="relative">
+          <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="date">Select Date</label>
+          <button
+            class="inline-flex justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground px-4 py-2 w-full flex-col h-auto items-start"
+            type="button"
+            aria-haspopup="dialog"
+            aria-expanded="false"
+            aria-controls="date-dropdown"
+            id="date-button"
+            data-state="closed"
+            onclick="toggleDropdown('date-dropdown', 'date-button')"
+          >
+            <span class="font-semibold uppercase text-[0.65rem]">Date</span>
+            <span id="selected-date" class="font-normal">4/2/2024</span>
+          </button>
+          <div id="date-dropdown" class="absolute mt-1 w-full bg-white dark:bg-gray-950 rounded-md shadow-lg hidden z-10">
+            <ul role="listbox" class="py-1" tabindex="-1">
+              <li role="option" class="px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-800 cursor-pointer" onclick="selectItemAndClose('selected-date', 'date-dropdown', 'date-button', '4/1/2024')">4/1/2024</li>
+              <li role="option" class="px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-800 cursor-pointer" onclick="selectItemAndClose('selected-date', 'date-dropdown', 'date-button', '4/2/2024')">4/2/2024</li>
+              <li role="option" class="px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-800 cursor-pointer" onclick="selectItemAndClose('selected-date', 'date-dropdown', 'date-button', '4/3/2024')">4/3/2024</li>
+              <li role="option" class="px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-800 cursor-pointer" onclick="selectItemAndClose('selected-date', 'date-dropdown', 'date-button', '4/4/2024')">4/4/2024</li>
+              <li role="option" class="px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-800 cursor-pointer" onclick="selectItemAndClose('selected-date', 'date-dropdown', 'date-button', '4/5/2024')">4/5/2024</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Book Now Button -->
+        <div class="col-span-1 md:col-span-2">
+          <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full">
+            Book Now
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
 <%- include('layouts/footer') %>
+
+<script>
+  function toggleDropdown(dropdownId, buttonId) {
+    const dropdown = document.getElementById(dropdownId);
+    const button = document.getElementById(buttonId);
+    const isOpen = button.getAttribute('aria-expanded') === 'true';
+    button.setAttribute('aria-expanded', !isOpen);
+    dropdown.classList.toggle('hidden', isOpen);
+  }
+
+  function selectItem(spanId, dropdownId, buttonId, value) {
+    const span = document.getElementById(spanId);
+    span.textContent = value;
+    const dropdown = document.getElementById(dropdownId);
+    const button = document.getElementById(buttonId);
+    button.setAttribute('aria-expanded', 'false');
+    dropdown.classList.add('hidden');
+  }
+
+  function selectItemAndClose(spanId, dropdownId, buttonId, value) {
+    selectItem(spanId, dropdownId, buttonId, value);
+    toggleDropdown(dropdownId, buttonId);
+  }
+</script>
+
+

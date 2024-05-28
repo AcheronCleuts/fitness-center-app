@@ -5,6 +5,8 @@ const user = require("./routers/user");
 const auth = require("./routers/auth");
 const sequelize = require("./config/db");
 const cookieParser = require("cookie-parser");
+const User = require("./models/user");
+const Reservation = require("./models/reservations");
 require("dotenv").config();
 const app = express();
 
@@ -13,6 +15,9 @@ app.use(cors());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("public"));
+
+User.hasMany(Reservation);
+Reservation.belongsTo(User);
 
 app.use(auth);
 app.use(user);
