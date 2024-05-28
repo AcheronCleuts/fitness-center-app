@@ -12,6 +12,7 @@ const authenticationMid = async (req, res, next) => {
         email: userLog.email,
         date: userLog.createdAt,
         membership: userLog.membership,
+        isAdmin: userLog.admin,
         profile: `/profile`
       };
     } else {

@@ -16,6 +16,10 @@ router.use("/profile",authenticationMid,getReservations, (req, res)=>{
     res.render("profile");
 })
 
+router.use("/admin/dashboard", authenticationMid, (req, res)=>{
+    res.render("dashboard");
+})
+
 router.use("/giris",authenticationMid, (req, res)=>{
     res.render("login");
 })
