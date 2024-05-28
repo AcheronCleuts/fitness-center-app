@@ -1,7 +1,7 @@
 <%- include('layouts/header') %>
-
 <div class="container mx-auto">
-  <h1 class="text-center text-3xl font-bold mt-8">Spor Bilgilerini Girin</h1>
+  <h1 class="text-center text-3xl font-bold mt-8">Rezervasyon sayfası</h1>
+  <h3 class="text-center text-sm font-bold">Kendinize uygun rezervasyonu seçin.</h3>
 
   <div class="flex flex-col items-center justify-center min-h-screen">
     <div class="bg-white shadow-md rounded-lg p-8 w-full md:w-3/4">
@@ -10,10 +10,10 @@
           <label for="sporTuru" class="block text-gray-700 text-sm font-medium mb-2">Spor Türü</label>
           <select id="sporTuru" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
             <option value="">Seçiniz...</option>
-            <option value="futbol">Futbol</option>
-            <option value="basketbol">Basketbol</option>
-            <option value="voleybol">Voleybol</option>
-            <option value="kosu">Koşu</option>
+            <option value="zumba">Zumba</option>
+            <option value="pilates">Pilates</option>
+            <option value="yoga">Yoga</option>
+            <option value="spinning">Spinning</option>
             <option value="yuzme">Yüzme</option>
           </select>
         </div>
@@ -25,17 +25,18 @@
           <label for="saat" class="block text-gray-700 text-sm font-medium mb-2">Saat</label>
           <select id="saat" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
             <option value="">Seçiniz...</option>
-            <option value="08:00">08:00</option>
-            <option value="09:00">09:00</option>
-            <option value="10:00">10:00</option>
-            <option value="11:00">11:00</option>
             <option value="12:00">12:00</option>
+            <option value="13:00">13:00</option>
+            <option value="14:00">14:00</option>
+            <option value="15:00">15:00</option>
+            <option value="16:00">16:00</option>
+            <option value="17:00">17:00</option>
+            <option value="18:00">18:00</option>
           </select>
         </div>
-        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Gönder</button>
+        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Onayla</button>
       </form>
     </div>
   </div>
 </div>
-
 <%- include('layouts/footer') %>

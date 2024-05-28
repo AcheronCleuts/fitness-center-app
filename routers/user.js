@@ -25,7 +25,7 @@ router.use("/kayit",authenticationMid, (req, res)=>{
     res.render("register");
 })
 
-router.use("/test", (req, res)=>{
+router.use("/rezervasyon",authenticationMid, (req, res)=>{
     res.render("rezervasyon");
 })
 
