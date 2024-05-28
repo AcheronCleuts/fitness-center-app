@@ -1,5 +1,6 @@
 const express = require('express');
 const authenticationMid = require('../middleware/auth');
+const { getReservations } = require('../controllers/reservation');
 
 const router = express.Router();
 
@@ -11,7 +12,7 @@ router.use("/planlar",authenticationMid, (req, res)=>{
     res.render("plans");
 })
 
-router.use("/profile",authenticationMid, (req, res)=>{
+router.use("/profile",authenticationMid,getReservations, (req, res)=>{
     res.render("profile");
 })
 

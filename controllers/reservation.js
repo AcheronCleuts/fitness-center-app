@@ -40,4 +40,16 @@ const createRezervation = async (req, res) => {
   }
 };
 
-module.exports = createRezervation;
+const getReservations = async (req, res, next) => {
+  const userID = req.cookies.token;
+
+  const reservations = await Reservation.findAll({
+    where: {
+      userId: userID,
+    },
+  });
+  console.log(reservations);
+  next();
+};
+
+module.exports = { createRezervation, getReservations };
