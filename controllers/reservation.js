@@ -1,3 +1,4 @@
+const e = require("express");
 const Reservation = require("../models/reservations");
 
 const createRezervation = async (req, res) => {
@@ -33,7 +34,7 @@ const createRezervation = async (req, res) => {
       res.status(400).send("rezervasyon dolu");
     }
 
-    res.status(200).send("basarılı");
+    res.redirect("/profile");
   } catch (error) {
     console.error(error);
     res.status(500).send("sg basarısız");
@@ -48,7 +49,12 @@ const getReservations = async (req, res, next) => {
       userId: userID,
     },
   });
-  console.log(reservations);
+  //! PROF. DR. SENİOR PREMİUM ULTRA DOĞUKAN SEKS COPYRİGHT 2024
+  reservations.forEach((e)=>{
+   var sport = e.dataValues.sport;
+   console.log("Spor türü ", sport);
+  })
+  //console.log(reservations);
   next();
 };
 
