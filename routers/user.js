@@ -9,10 +9,6 @@ router.get("/kayitgiris",authenticationMid, (req, res)=>{
     res.render("succeslogin");
 });
 
-// router.get("/profil/:id",authenticationMid, (req, res)=>{
-//     res.render("profile")
-// })
-
 router.use("/planlar",authenticationMid, (req, res)=>{
     res.render("plans");
 })

@@ -12,7 +12,7 @@ const authenticationMid = async (req, res, next) => {
         email: userLog.email,
         date: userLog.createdAt,
         membership: userLog.membership,
-        profile: `/profile/${userLog.id}`
+        profile: `/profile`
       };
     } else {
       res.locals.isAuth = 0;
