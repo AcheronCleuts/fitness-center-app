@@ -2,12 +2,12 @@ const { DataTypes } = require("sequelize");
 const sequelize = require("../config/db");
 
 const Reservation = sequelize.define("reservations", {
-  reservation_data: {
-    type: DataTypes.DATE,
+  data: {
+    type: DataTypes.STRING,
     allowNull: false,
   },
-  reservation_time: {
-    type: DataTypes.TIME,
+  time: {
+    type: DataTypes.STRING,
     allowNull: false,
   },
   sport: {

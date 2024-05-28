@@ -5,10 +5,10 @@
 
   <div class="flex flex-col items-center justify-center min-h-screen">
     <div class="bg-white shadow-md rounded-lg p-8 w-full md:w-3/4">
-      <form action="#">
+      <form action="/createreservation" method="post">
         <div class="mb-4">
           <label for="sporTuru" class="block text-gray-700 text-sm font-medium mb-2">Spor Türü</label>
-          <select id="sporTuru" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+          <select id="sporTuru" name="sport" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
             <option value="">Seçiniz...</option>
             <option value="zumba">Zumba</option>
             <option value="pilates">Pilates</option>
@@ -19,11 +19,11 @@
         </div>
         <div class="mb-4">
           <label for="tarih" class="block text-gray-700 text-sm font-medium mb-2">Tarih</label>
-          <input type="date" id="tarih" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+          <input type="date" name="date" id="tarih" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
         </div>
         <div class="mb-4">
           <label for="saat" class="block text-gray-700 text-sm font-medium mb-2">Saat</label>
-          <select id="saat" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+          <select id="saat" name="time" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
             <option value="">Seçiniz...</option>
             <option value="12:00">12:00</option>
             <option value="13:00">13:00</option>

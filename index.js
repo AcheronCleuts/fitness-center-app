@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const user = require("./routers/user");
 const auth = require("./routers/auth");
+const rezervationsRouter = require("./routers/reservations");
 const sequelize = require("./config/db");
 const cookieParser = require("cookie-parser");
 const User = require("./models/user");
@@ -16,10 +17,11 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("public"));
 
-User.hasMany(Reservation);
-Reservation.belongsTo(User);
+User.hasMany(Reservation, { foreignKey: 'userId' });
+Reservation.belongsTo(User, { foreignKey: 'userId' });
 
 app.use(auth);
+app.use(rezervationsRouter);
 app.use(user);
 
 app.use("/", (req, res) => {
