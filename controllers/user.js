@@ -29,11 +29,11 @@ const login = async (req, res) => {
   try {
     const user = await User.findOne({ where: { email } });
     if (!user) {
-      return res.status(400).send("Kullanıcı Bulunamadı");
+      return res.render("user404")
     }
 
     if (user.password !== password) {
-      return res.status(400).send("Şifreniz yanlış tekrar deneyiniz");
+      return res.render("user404");
     }
 
     res
@@ -51,7 +51,7 @@ const login = async (req, res) => {
       .redirect(`/profil/${user.id}`);
   } catch (error) {
     console.error(error);
-    res.status(500).send("Giriş başarısız");
+    res.status(500).send("Giriş başarısız, bilinmeyen bir hata");
   }
 };
 
@@ -106,6 +106,7 @@ const changeMembership = async (req, res) => {
   }
 
   const change = await User.update({ membership: package }, { where: { id: userID } });
+  res.redirect("/profile");
 };
 
 module.exports = { register, login, logout, getUsers, getUser, changeMembership };

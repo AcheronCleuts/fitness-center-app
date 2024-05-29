@@ -23,7 +23,7 @@ const createRezervation = async (req, res) => {
 
   const membership = user.get("membership");
   if (membership === 0) {
-    res.status(400); //üyeliğiniz yok
+    res.redirect("planlar");
   } else {
     try {
       const reservationControl = await Reservation.findOne({
