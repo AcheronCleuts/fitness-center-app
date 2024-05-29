@@ -1,24 +1,24 @@
 <%- include('layouts/header') %>
 
 <div class="flex items-center justify-center min-h-screen">
-    <div class="max-w-md w-full space-y-6">
-      <div class="bg-white dark:bg-gray-950 rounded-lg shadow-md p-6">
-        <div class="flex items-center space-x-4">
-          <div class="flex-shrink-0">
-            <span class="relative flex shrink-0 overflow-hidden w-12 h-12 rounded-full">
-              <img class="aspect-square h-full w-full" alt="User Avatar" src="/assets/userlogo.jpg" />
-            </span>
-          </div>
-          <div class="flex-1 min-w-0">
-            <p class="text-lg font-medium text-gray-900 dark:text-gray-50 truncate">@Ahmet Danış</p>
-            <p class="text-sm text-gray-500 dark:text-gray-400 truncate">ahmetdanış@gmail.com</p>
-          </div>
-          <div class="flex-shrink-0 text-gray-500 dark:text-gray-400">
-            <span class="font-medium">12</span> Rezervasyon
-          </div>
+  <div class="max-w-md w-full space-y-6">
+    <% users.forEach(function(users) { %>
+    <div class="bg-white dark:bg-gray-950 rounded-lg shadow-md p-6">
+      <div class="flex items-center space-x-4">
+        <div class="flex-shrink-0">
+          <span class="relative flex shrink-0 overflow-hidden w-12 h-12 rounded-full">
+            <img class="aspect-square h-full w-full" alt="User Avatar" src="/assets/userlogo.jpg" />
+          </span>
         </div>
+        <div class="flex-1 min-w-0">
+          <p class="text-lg font-medium text-gray-900 dark:text-gray-50 truncate"><%= users.name %></p>
+          <p class="text-sm text-gray-500 dark:text-gray-400 truncate"><%= users.email %></p>
+        </div>
+        <div class="flex-shrink-0 text-gray-500 dark:text-gray-400"><span class="font-medium">12</span> Rezervasyon</div>
       </div>
     </div>
+    <% }) %>
   </div>
-  
+</div>
+
 <%- include('layouts/footer') %>

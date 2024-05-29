@@ -36,8 +36,9 @@ const login = async (req, res) => {
       return res.status(400).send("Şifreniz yanlış tekrar deneyiniz");
     }
 
-    res.status(200)
-       .cookie("token", user.id, {
+    res
+      .status(200)
+      .cookie("token", user.id, {
         expires: new Date(Date.now() + 3600000),
         httpOnly: true,
         secure: true,
@@ -59,4 +60,20 @@ const logout = async (req, res) => {
   res.redirect("/");
 };
 
-module.exports = { register, login, logout };
+const getUsers = async (req, res) => {
+  try {
+    const users = await User.findAll({
+      attributes: ["id", "name", "email", "createdAt"],
+    });
+
+    const userData = users.map((user) => user.dataValues);
+
+    console.log(userData);
+    return userData;
+  } catch (error) {
+    console.error(error);
+    res.status(500);
+  }
+};
+
+module.exports = { register, login, logout, getUsers };

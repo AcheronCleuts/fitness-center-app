@@ -18,14 +18,14 @@ const createRezervation = async (req, res) => {
   try {
     const reservationControl = await Reservation.findOne({
       where: {
-        data: date,
+        date: date,
         time: time,
         sport: sport,
       },
     });
     if (reservationControl === null) {
       const newReservation = await Reservation.create({
-        data: date,
+        date: date,
         time: time,
         sport: sport,
         userId: userID,
@@ -41,21 +41,33 @@ const createRezervation = async (req, res) => {
   }
 };
 
-const getReservations = async (req, res, next) => {
-  const userID = req.cookies.token;
+// const getReservations = async (req, res, next) => {
+//   const userID = req.cookies.token;
 
+//   const reservations = await Reservation.findAll({
+//     where: {
+//       userId: userID,
+//     },
+//   });
+//   //! PROF. DR. SENİOR PREMİUM ULTRA DOĞUKAN SEKS COPYRİGHT 2024
+//   //! MUMBAR SURAT BUNA ALLAHINI YERİM DİYOR
+//   reservations.forEach((e)=>{
+//    var sport = e.dataValues.sport;
+//    console.log("Spor türü ", sport);
+//   })
+//   //console.log(reservations);
+//   next();
+// };
+
+const getReservations = async (token) => {
   const reservations = await Reservation.findAll({
     where: {
-      userId: userID,
+      userId: token,
     },
+    attributes: ["id", "date", "time", "sport", "createdAt"],
   });
-  //! PROF. DR. SENİOR PREMİUM ULTRA DOĞUKAN SEKS COPYRİGHT 2024
-  reservations.forEach((e)=>{
-   var sport = e.dataValues.sport;
-   console.log("Spor türü ", sport);
-  })
-  //console.log(reservations);
-  next();
+  const reservationData = reservations.map((reservation) => reservation.dataValues);
+  return reservationData;
 };
 
 module.exports = { createRezervation, getReservations };

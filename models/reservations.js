@@ -2,7 +2,7 @@ const { DataTypes } = require("sequelize");
 const sequelize = require("../config/db");
 
 const Reservation = sequelize.define("reservations", {
-  data: {
+  date: {
     type: DataTypes.STRING,
     allowNull: false,
   },
