@@ -1,51 +1,54 @@
 <%- include('layouts/header') %>
-    <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 p-4 md:p-6">
-        <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 dark:bg-gray-800">
-            <div class="p-6">
-                <h3 class="text-2xl font-bold mb-2">EAGLE PAKET 200TL</h3>
-                <p class="text-gray-500 dark:text-gray-400 mb-4">Aylık 20 giriş!</p>
-                <p class="text-gray-500 dark:text-gray-400 mb-4">Grup Dersleri.</p>
-                <p class="text-gray-500 dark:text-gray-400 mb-4">Ücretsiz Su.</p>
-            </div>
-        </div>
-        <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 dark:bg-gray-800">
-            <div class="p-6">
-                <h3 class="text-2xl font-bold mb-2">EAGLE PLUS PAKET 400TL</h3>
-                <p class="text-gray-500 dark:text-gray-400 mb-4">Aylık 40 giriş!</p>
-                <p class="text-gray-500 dark:text-gray-400 mb-4">Yüzme Havuzu, Sauna, Buhar Odası.</p>
-                <p class="text-gray-500 dark:text-gray-400 mb-4">Ücretsiz su, havlu.</p>
-            </div>
-        </div>
-        <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 dark:bg-gray-800">
-            <div class="p-6">
-                <h3 class="text-2xl font-bold mb-2">EAGLE PRO PAKET 600TL</h3>
-                <p class="text-gray-500 dark:text-gray-400 mb-4">Aylık 60 giriş!</p>
-                <p class="text-gray-500 dark:text-gray-400 mb-4">Tüm aktif spor alanlarına erişim.</p>
-                <p class="text-gray-500 dark:text-gray-400 mb-4">Ücretsiz meşrubat, yemek</p>
-                <p class="text-gray-500 dark:text-gray-400 mb-4">Özel grup dersleri</p>            
-            </div>
-        </div>
-    </section>
-    <section class="bg-gray-100 dark:bg-gray-800 py-12 px-4 md:px-6">
-        <div class="max-w-md mx-auto">
-            <h2 class="text-2xl font-bold mb-4">Kendinize uygun paketi satın alın.</h2>
-            <form class="space-y-4" action="/setmembership"  method="post">
-                <div>
-                    <label for="package" class="block text-gray-700 dark:text-gray-400 font-medium mb-2">
-                        Paket Seçin
-                    </label>
-                    <select id="package"
-                        class="block w-full px-4 py-2 bg-white rounded-md shadow-sm border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200">
-                        <option value="1">EAGLE PAKET</option>
-                        <option value="2">EAGLE PLUS PAKET</option>
-                        <option value="3">EAGLE PRO PAKET</option>
-                    </select>
-                </div>
-                <button type="submit"
-                    class="inline-flex items-center justify-center px-4 py-2 bg-gray-900 text-white rounded-md hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-500 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-200 dark:focus:ring-gray-300">
-                    Onayla
-                </button>
-            </form>
-        </div>
-    </section>
-    <%- include('layouts/footer') %>
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 p-4 md:p-6">
+  <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 dark:bg-gray-800">
+    <div class="p-6">
+      <h3 class="text-2xl font-bold mb-2">EAGLE PAKET 200TL</h3>
+      <p class="text-gray-500 dark:text-gray-400 mb-4">Aylık 20 giriş!</p>
+      <p class="text-gray-500 dark:text-gray-400 mb-4">Grup Dersleri.</p>
+      <p class="text-gray-500 dark:text-gray-400 mb-4">Ücretsiz Su.</p>
+    </div>
+  </div>
+  <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 dark:bg-gray-800">
+    <div class="p-6">
+      <h3 class="text-2xl font-bold mb-2">EAGLE PLUS PAKET 400TL</h3>
+      <p class="text-gray-500 dark:text-gray-400 mb-4">Aylık 40 giriş!</p>
+      <p class="text-gray-500 dark:text-gray-400 mb-4">Yüzme Havuzu, Sauna, Buhar Odası.</p>
+      <p class="text-gray-500 dark:text-gray-400 mb-4">Ücretsiz su, havlu.</p>
+    </div>
+  </div>
+  <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 dark:bg-gray-800">
+    <div class="p-6">
+      <h3 class="text-2xl font-bold mb-2">EAGLE PRO PAKET 600TL</h3>
+      <p class="text-gray-500 dark:text-gray-400 mb-4">Aylık 60 giriş!</p>
+      <p class="text-gray-500 dark:text-gray-400 mb-4">Tüm aktif spor alanlarına erişim.</p>
+      <p class="text-gray-500 dark:text-gray-400 mb-4">Ücretsiz meşrubat, yemek</p>
+      <p class="text-gray-500 dark:text-gray-400 mb-4">Özel grup dersleri</p>
+    </div>
+  </div>
+</section>
+<section class="bg-gray-100 dark:bg-gray-800 py-12 px-4 md:px-6">
+  <div class="max-w-md mx-auto">
+    <h2 class="text-2xl font-bold mb-4">Kendinize uygun paketi satın alın.</h2>
+    <form class="space-y-4" action="/setmembership" method="post">
+      <div>
+        <label for="package" class="block text-gray-700 dark:text-gray-400 font-medium mb-2"> Paket Seçin </label>
+        <select
+          id="package"
+          name="package"
+          class="block w-full px-4 py-2 bg-white rounded-md shadow-sm border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200"
+        >
+          <option value="1">EAGLE PAKET</option>
+          <option value="2">EAGLE PLUS PAKET</option>
+          <option value="3">EAGLE PRO PAKET</option>
+        </select>
+      </div>
+      <button
+        type="submit"
+        class="inline-flex items-center justify-center px-4 py-2 bg-gray-900 text-white rounded-md hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-500 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-200 dark:focus:ring-gray-300"
+      >
+        Onayla
+      </button>
+    </form>
+  </div>
+</section>
+<%- include('layouts/footer') %>

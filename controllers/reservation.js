@@ -37,27 +37,9 @@ const createRezervation = async (req, res) => {
     res.redirect("/profile");
   } catch (error) {
     console.error(error);
-    res.status(500).send("sg basarısız");
+    res.status(500).send("basarısız");
   }
 };
-
-// const getReservations = async (req, res, next) => {
-//   const userID = req.cookies.token;
-
-//   const reservations = await Reservation.findAll({
-//     where: {
-//       userId: userID,
-//     },
-//   });
-//   //! PROF. DR. SENİOR PREMİUM ULTRA DOĞUKAN SEKS COPYRİGHT 2024
-//   //! MUMBAR SURAT BUNA ALLAHINI YERİM DİYOR
-//   reservations.forEach((e)=>{
-//    var sport = e.dataValues.sport;
-//    console.log("Spor türü ", sport);
-//   })
-//   //console.log(reservations);
-//   next();
-// };
 
 const getReservations = async (token) => {
   const reservations = await Reservation.findAll({
@@ -66,6 +48,7 @@ const getReservations = async (token) => {
     },
     attributes: ["id", "date", "time", "sport", "createdAt"],
   });
+  
   const reservationData = reservations.map((reservation) => reservation.dataValues);
   return reservationData;
 };

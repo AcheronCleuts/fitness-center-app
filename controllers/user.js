@@ -87,4 +87,25 @@ const getUser = async (token) => {
   return userData;
 };
 
-module.exports = { register, login, logout, getUsers, getUser};
+const changeMembership = async (req, res) => {
+  const { package } = req.body;
+  const userID = req.cookies.token;
+
+  if (!userID) {
+    res.status(400);
+  }
+
+  const selectUser = await User.findOne({
+    where: {
+      id: userID,
+    },
+  });
+
+  if (!selectUser) {
+    res.status(400);
+  }
+
+  const change = await User.update({ membership: package }, { where: { id: userID } });
+};
+
+module.exports = { register, login, logout, getUsers, getUser, changeMembership };
