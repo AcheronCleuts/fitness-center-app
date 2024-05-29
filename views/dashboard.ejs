@@ -3,7 +3,8 @@
 <div class="flex items-center justify-center min-h-screen">
   <div class="max-w-md w-full space-y-6">
     <% users.forEach(function(users) { %>
-    <div class="bg-white dark:bg-gray-950 rounded-lg shadow-md p-6">
+     <a href="/admin/<%= users.id %>">
+    <div class="bg-white dark:bg-gray-950 rounded-lg shadow-md p-6 cursor-pointer">
       <div class="flex items-center space-x-4">
         <div class="flex-shrink-0">
           <span class="relative flex shrink-0 overflow-hidden w-12 h-12 rounded-full">
@@ -17,6 +18,7 @@
         <div class="flex-shrink-0 text-gray-500 dark:text-gray-400"><span class="font-medium">12</span> Rezervasyon</div>
       </div>
     </div>
+    </a>
     <% }) %>
   </div>
 </div>

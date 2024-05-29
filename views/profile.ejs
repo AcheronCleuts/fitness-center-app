@@ -60,7 +60,7 @@
             <div class="text-gray-500 dark:text-gray-400">Paketiniz Bulunmuyor.</div>
             <div class="text-gray-500 dark:text-gray-400">
               Paket satın almak için
-              <a class="bg-red-600 hover:bg-blue-500 text-white px-4 py-2 rounded-md" href="/planlar">Tıklayın!</a>
+              <div class="px-2 py-1 rounded-full bg-red-100 text-red-600 dark:bg-red-900/20 dark:text-red-400"><a href="/planlar">Tıklayın</a></div>
             </div>
             <% } %> <% if (user.membership==1) { %>
             <div class="text-gray-500 dark:text-gray-400">EAGLE PAKET.</div>
@@ -75,7 +75,7 @@
     </div>
     <div class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
       <div class="flex flex-col space-y-1.5 p-6">
-        <h3 class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">Reservations</h3>
+        <h3 class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">Rezervasyonlar</h3>
       </div>
       <div class="p-6">
         <div class="grid gap-4">
@@ -83,11 +83,15 @@
           <div class="grid grid-cols-[100px_1fr_100px] items-center gap-4 bg-gray-100 p-4 rounded-lg dark:bg-gray-800">
             <div class="font-medium">#<%= reservation.id %></div>
             <div>
-              <div class="font-medium"><%= reservation.date %></div>
-              <div class="text-gray-500 dark:text-gray-400">Booked on <%= reservation.createdAt %></div>
+              <div class="font-medium">Rezervasyon Tarihi</div>
+              <div class="text-gray-500 dark:text-gray-400"><%= reservation.date %></div>
+            </div>
+            <div>
+              <div class="font-medium">Rezervasyon Türü</div>
+              <div class="text-gray-500 dark:text-gray-400"><%= reservation.sport %></div>
             </div>
             <div class="flex items-center gap-2">
-              <div class="px-2 py-1 rounded-full bg-green-100 text-green-600 dark:bg-green-900/20 dark:text-green-400">Confirmed</div>
+              <div class="px-2 py-1 rounded-full bg-green-100 text-green-600 dark:bg-green-900/20 dark:text-green-400">Onaylandı</div>
             </div>
           </div>
           <% }) %>

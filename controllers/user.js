@@ -76,4 +76,15 @@ const getUsers = async (req, res) => {
   }
 };
 
-module.exports = { register, login, logout, getUsers };
+const getUser = async (token) => {
+  const getUserData = await User.findAll({
+    where: {
+      id: token,
+    },
+    attributes: ["id", "name", "email", "createdAt"],
+  });
+  const userData = getUserData.map((user) => user.dataValues);
+  return userData;
+};
+
+module.exports = { register, login, logout, getUsers, getUser};

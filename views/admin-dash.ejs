@@ -1,0 +1,29 @@
+<%- include('layouts/header') %>
+
+<div class="flex flex-col items-center justify-center h-screen">
+  <% get_user.forEach(e => { %>
+    <h2 class="text-2xl font-bold mb-6"><%= e.name %> Rezervasyonları</h2>
+  <% }) %>
+  <table class="w-full max-w-md border rounded-lg overflow-hidden">
+    <thead class="bg-gray-100 dark:bg-gray-800">
+      <tr>
+        <th class="px-4 py-3 text-left font-medium">Rezervasyon ID</th>
+        <th class="px-4 py-3 text-left font-medium">Branş</th>
+        <th class="px-4 py-3 text-left font-medium">Rezervasyon Tarihi</th>
+        <th class="px-4 py-3 text-left font-medium">Rezervasyon Saati</th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+      <% get_reserve.forEach(e => { %>
+        <tr>
+          <td class="px-4 py-3">#<%= e.id %></td>
+          <td class="px-4 py-3"><%= e.sport %></td>
+          <td class="px-4 py-3"><%= e.date %></td>
+          <td class="px-4 py-3"><%= e.time %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
+
+<%- include('layouts/footer') %>
