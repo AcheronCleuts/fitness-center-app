@@ -29,7 +29,7 @@ router.use("/admin/:id", authenticationMid, async (req, res)=>{
   const user = await getUser(userID);
   res.render("admin-dash", {
     get_user: user,
-    get_reserve: userReservations
+    get_reserve: userReservations,
   });
 })
 

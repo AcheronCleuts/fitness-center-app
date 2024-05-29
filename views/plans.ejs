@@ -1,138 +1,51 @@
 <%- include('layouts/header') %>
-<div class="flex items-center justify-center min-h-screen">
-    <section class="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
-        <div class="container grid gap-12 px-4 md:px-6">
-            <div class="flex flex-col items-center justify-center space-y-4 text-center">
-                <div class="space-y-2">
-                    <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl">Üyelik Paketleri</h2>
-                    <p class="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                        Kendi bütçene uygun planı seç.
-                    </p>
-                </div>
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 p-4 md:p-6">
+        <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 dark:bg-gray-800">
+            <div class="p-6">
+                <h3 class="text-2xl font-bold mb-2">EAGLE PAKET 200TL</h3>
+                <p class="text-gray-500 dark:text-gray-400 mb-4">Aylık 20 giriş!</p>
+                <p class="text-gray-500 dark:text-gray-400 mb-4">Grup Dersleri.</p>
+                <p class="text-gray-500 dark:text-gray-400 mb-4">Ücretsiz Su.</p>
             </div>
-            <div class="flex justify-center sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg dark:bg-gray-950">
-                    <div class="p-6 border-b dark:border-gray-800">
-                        <h3 class="text-2xl font-bold">Basic</h3>
-                    </div>
-                    <div class="p-6 space-y-4">
-                        <ul class="space-y-2 text-gray-500 dark:text-gray-400">
-                            <li class="flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="w-5 h-5 fill-primary">
-                                    <path d="M20 6 9 17l-5-5"></path>
-                                </svg>
-                                10 entries per month
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="w-5 h-5 fill-primary">
-                                    <path d="M20 6 9 17l-5-5"></path>
-                                </svg>
-                                Free water
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="w-5 h-5 fill-primary">
-                                    <path d="M20 6 9 17l-5-5"></path>
-                                </svg>
-                                Standard equipment usage
-                            </li>
-                        </ul>
-                        <button
-                            class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-8 w-full">
-                            Purchase
-                        </button>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg dark:bg-gray-950">
-                    <div class="p-6 border-b dark:border-gray-800">
-                        <h3 class="text-2xl font-bold">Standard</h3>
-                    </div>
-                    <div class="p-6 space-y-4">
-                        <ul class="space-y-2 text-gray-500 dark:text-gray-400">
-                            <li class="flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="w-5 h-5 fill-primary">
-                                    <path d="M20 6 9 17l-5-5"></path>
-                                </svg>
-                                20 entries per month
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="w-5 h-5 fill-primary">
-                                    <path d="M20 6 9 17l-5-5"></path>
-                                </svg>
-                                Free water and snacks
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="w-5 h-5 fill-primary">
-                                    <path d="M20 6 9 17l-5-5"></path>
-                                </svg>
-                                Premium equipment usage
-                            </li>
-                        </ul>
-                        <button
-                            class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-8 w-full">
-                            Purchase
-                        </button>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg dark:bg-gray-950">
-                    <div class="p-6 border-b dark:border-gray-800">
-                        <h3 class="text-2xl font-bold">Premium</h3>
-                    </div>
-                    <div class="p-6 space-y-4">
-                        <ul class="space-y-2 text-gray-500 dark:text-gray-400">
-                            <li class="flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="w-5 h-5 fill-primary">
-                                    <path d="M20 6 9 17l-5-5"></path>
-                                </svg>
-                                Unlimited entries
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="w-5 h-5 fill-primary">
-                                    <path d="M20 6 9 17l-5-5"></path>
-                                </svg>
-                                Free water, snacks, and protein shakes
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="w-5 h-5 fill-primary">
-                                    <path d="M20 6 9 17l-5-5"></path>
-                                </svg>
-                                Personal trainer support
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="w-5 h-5 fill-primary">
-                                    <path d="M20 6 9 17l-5-5"></path>
-                                </svg>
-                                VIP area access
-                            </li>
-                        </ul>
-                        <button
-                            class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-8 w-full">
-                            Purchase
-                        </button>
-                    </div>
-                </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 dark:bg-gray-800">
+            <div class="p-6">
+                <h3 class="text-2xl font-bold mb-2">EAGLE PLUS PAKET 400TL</h3>
+                <p class="text-gray-500 dark:text-gray-400 mb-4">Aylık 40 giriş!</p>
+                <p class="text-gray-500 dark:text-gray-400 mb-4">Yüzme Havuzu, Sauna, Buhar Odası.</p>
+                <p class="text-gray-500 dark:text-gray-400 mb-4">Ücretsiz su, havlu.</p>
+            </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 dark:bg-gray-800">
+            <div class="p-6">
+                <h3 class="text-2xl font-bold mb-2">EAGLE PRO PAKET 600TL</h3>
+                <p class="text-gray-500 dark:text-gray-400 mb-4">Aylık 60 giriş!</p>
+                <p class="text-gray-500 dark:text-gray-400 mb-4">Tüm aktif spor alanlarına erişim.</p>
+                <p class="text-gray-500 dark:text-gray-400 mb-4">Ücretsiz meşrubat, yemek</p>
+                <p class="text-gray-500 dark:text-gray-400 mb-4">Özel grup dersleri</p>            
             </div>
         </div>
     </section>
-</div>
-
-<%- include('layouts/footer') %>
+    <section class="bg-gray-100 dark:bg-gray-800 py-12 px-4 md:px-6">
+        <div class="max-w-md mx-auto">
+            <h2 class="text-2xl font-bold mb-4">Kendinize uygun paketi satın alın.</h2>
+            <form class="space-y-4" action="/setmembership"  method="post">
+                <div>
+                    <label for="package" class="block text-gray-700 dark:text-gray-400 font-medium mb-2">
+                        Paket Seçin
+                    </label>
+                    <select id="package"
+                        class="block w-full px-4 py-2 bg-white rounded-md shadow-sm border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200">
+                        <option value="1">EAGLE PAKET</option>
+                        <option value="2">EAGLE PLUS PAKET</option>
+                        <option value="3">EAGLE PRO PAKET</option>
+                    </select>
+                </div>
+                <button type="submit"
+                    class="inline-flex items-center justify-center px-4 py-2 bg-gray-900 text-white rounded-md hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-500 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-200 dark:focus:ring-gray-300">
+                    Onayla
+                </button>
+            </form>
+        </div>
+    </section>
+    <%- include('layouts/footer') %>
