@@ -60,7 +60,7 @@ const deleteReservation = async (req, res) => {
       id: id,
     },
   });
-  res.status(200).redirect("/profile");
+  res.status(200).redirect("back");
 };
 
 const getReservations = async (token) => {

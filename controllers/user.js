@@ -16,7 +16,6 @@ const register = async (req, res) => {
       password,
     });
     res.redirect("/kayitgiris");
-    // res.status(201).send("Kayıt işlemi başarıyla gerçekleştirilmiştir").redirect("/giris");
   } catch (error) {
     console.error(error);
     res.status(500).send("Kayıt işlemi sırasında beklenmedik bir hata oluştu");
@@ -68,7 +67,6 @@ const getUsers = async (req, res) => {
 
     const userData = users.map((user) => user.dataValues);
 
-    console.log(userData);
     return userData;
   } catch (error) {
     console.error(error);

@@ -2,7 +2,7 @@
 
 <div class="flex flex-col items-center justify-center h-screen">
   <% get_user.forEach(e => { %>
-    <h2 class="text-2xl font-bold mb-6"><%= e.name %> Rezervasyonları</h2>
+  <h2 class="text-2xl font-bold mb-6"><%= e.name %> Rezervasyonları</h2>
   <% }) %>
   <table class="w-full max-w-md border rounded-lg overflow-hidden">
     <thead class="bg-gray-100 dark:bg-gray-800">
@@ -11,16 +11,23 @@
         <th class="px-4 py-3 text-left font-medium">Branş</th>
         <th class="px-4 py-3 text-left font-medium">Rezervasyon Tarihi</th>
         <th class="px-4 py-3 text-left font-medium">Rezervasyon Saati</th>
+        <th class="px-4 py-3 text-left font-medium">Rezervasyon İptal</th>
       </tr>
     </thead>
     <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
       <% get_reserve.forEach(e => { %>
-        <tr>
-          <td class="px-4 py-3">#<%= e.id %></td>
-          <td class="px-4 py-3"><%= e.sport %></td>
-          <td class="px-4 py-3"><%= e.date %></td>
-          <td class="px-4 py-3"><%= e.time %></td>
-        </tr>
+      <tr>
+        <td class="px-4 py-3">#<%= e.id %></td>
+        <td class="px-4 py-3"><%= e.sport %></td>
+        <td class="px-4 py-3"><%= e.date %></td>
+        <td class="px-4 py-3"><%= e.time %></td>
+        <td class="px-4 py-3">
+          <form action="/deletereservation" method="POST">
+            <input type="hidden" name="id" value="<%= e.id %>" />
+            <button class="px-3 py-2 rounded-full bg-red-100 text-red-600 dark:bg-red-900/20 dark:text-red-400" type="submit">İptal Et</button>
+          </form>
+        </td>
+      </tr>
       <% }) %>
     </tbody>
   </table>
