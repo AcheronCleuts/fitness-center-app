@@ -13,9 +13,9 @@ router.use("/planlar", authenticationMid, (req, res) => {
   res.render("plans");
 });
 
-router.use("/profile", authenticationMid, async(req, res) => {
+router.use("/profile", authenticationMid, async (req, res) => {
   const userReservation = await getReservations(req.cookies.token);
-  res.render("profile",{userReservation});
+  res.render("profile", { userReservation });
 });
 
 router.use("/admin/dashboard", authenticationMid, async (req, res) => {
@@ -23,7 +23,7 @@ router.use("/admin/dashboard", authenticationMid, async (req, res) => {
   res.render("dashboard", { users });
 });
 
-router.use("/admin/:id", authenticationMid, async (req, res)=>{
+router.use("/admin/:id", authenticationMid, async (req, res) => {
   const userID = req.params.id;
   const userReservations = await getReservations(userID);
   const user = await getUser(userID);
@@ -31,7 +31,7 @@ router.use("/admin/:id", authenticationMid, async (req, res)=>{
     get_user: user,
     get_reserve: userReservations,
   });
-})
+});
 
 router.use("/giris", authenticationMid, (req, res) => {
   res.render("login");
@@ -43,6 +43,10 @@ router.use("/kayit", authenticationMid, (req, res) => {
 
 router.use("/rezervasyon", authenticationMid, (req, res) => {
   res.render("rezervasyon");
+});
+
+router.use("/egitmenler", authenticationMid, (req, res) => {
+  res.render("instructors");
 });
 
 router.use("/", authenticationMid, (req, res) => {
